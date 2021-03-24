@@ -3,11 +3,11 @@ from . import views
 from django.urls import path, include
 
 router = routers.DefaultRouter()
-router.register('team', viewset=views.TeamViewset)
-router.register('team_player', viewset=views.PlayerViewset)
-router.register('match', viewset=views.MatchViewset)
-router.register('round', viewset=views.RoundViewset)
-router.register('tournament', viewset=views.Tournamentiewset)
+router.register('team', viewset=views.TeamViewSet)
+router.register('team_player', viewset=views.PlayerViewSet)
+router.register('match', viewset=views.MatchViewSet)
+router.register('round', viewset=views.RoundViewSet)
+router.register('tournament', viewset=views.TournamentViewSet)
 
 urlpatterns = [
     path('', include(router.urls))

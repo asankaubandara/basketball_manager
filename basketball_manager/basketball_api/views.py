@@ -3,26 +3,26 @@ from . import models
 from . import serializers
 
 
-class TeamViewset(viewsets.ModelViewSet):
+class TeamViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.TeamSerializer
     queryset = models.Team.objects.all()
 
 
-class PlayerViewset(viewsets.ModelViewSet):
+class PlayerViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.PlayerSerializer
     queryset = models.Player.objects.all()
 
 
-class MatchViewset(viewsets.ModelViewSet):
+class MatchViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.MatchSerializer
     queryset = models.Match.objects.all()
 
 
-class RoundViewset(viewsets.ModelViewSet):
+class RoundViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.RoundSerializer
     queryset = models.Round.objects.all()
 
 
-class Tournamentiewset(viewsets.ModelViewSet):
+class TournamentViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.TournamentSerializer
     queryset = models.Tournament.objects.all()

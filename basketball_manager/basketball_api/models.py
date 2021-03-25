@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.db.models import Sum, Avg, Count
+from django.db.models import Avg
 from django.utils.timezone import now
 
 

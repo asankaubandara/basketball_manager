@@ -3,18 +3,19 @@ from rest_framework import serializers
 from .models import Team, Player, User, Match, Round, Tournament
 from rest_framework.fields import ReadOnlyField
 import logging
-import datetime
 
 logger = logging.getLogger(__name__)
 
 
 class BkUserSerializer(serializers.ModelSerializer):
+    logger.info('Starting user serializer!')
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email']
 
 
 class UserSerializer(serializers.ModelSerializer):
+    logger.info('Starting user serializer!')
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name',
@@ -22,21 +23,23 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class TeamSerializer(serializers.HyperlinkedModelSerializer):
-    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
+    logger.info('Starting team serializer!')
     avg_team_score = ReadOnlyField(source='get_avg_team_score', default=0)
 
     class Meta:
         model = Team
-        fields = ['name', 'address', 'mobile', 'created_at','avg_team_score']
+        fields = ['id','name', 'address', 'mobile', 'created_at', 'avg_team_score']
 
 
 class TournamentSerializer(serializers.HyperlinkedModelSerializer):
+    logger.info('Starting Tournament serializer!')
     class Meta:
         model = Tournament
         fields = '__all__'
 
 
 class RoundSerializer(serializers.HyperlinkedModelSerializer):
+    logger.info('Starting round serializer!')
     tournament = TournamentSerializer()
 
     class Meta:
@@ -45,7 +48,7 @@ class RoundSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class PlayerSerializer(serializers.HyperlinkedModelSerializer):
-    logger.info('getting player serializer!')
+    logger.info('Starting player serializer!')
     team = TeamSerializer()
     avg_score = ReadOnlyField(source='get_stats', default=0)
     no_of_matches = ReadOnlyField(source='get_no_of_matches', default=0)
@@ -57,7 +60,7 @@ class PlayerSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class MatchSerializer(serializers.HyperlinkedModelSerializer):
-    logger.info('getting Match serializer!')
+    logger.info('Starting Match serializer!')
     winning_team = TeamSerializer()
     losing_team = TeamSerializer()
     round = RoundSerializer()

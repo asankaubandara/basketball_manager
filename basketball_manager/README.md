@@ -17,9 +17,13 @@ To run the application:
 python manage.py runserver
 
 
-To access the app (for example on localhost):
-  * front page: http://127.0.0.1:8000/api/
+To access the apis (for example on localhost):
+  * api list page: http://127.0.0.1:8000/api/
   * teams list: http://127.0.0.1:8000/api/team/
+  * team detail: http://127.0.0.1:8000/api/team/<id>
   * match list: http://127.0.0.1:8000/api/match/
+  * match detail: http://127.0.0.1:8000/api/match/<id>
   * team players list: http://127.0.0.1:8000/api/team_player/
-  * tournament: http://127.0.0.1:8000/api/tournament/
+  * team players detail: http://127.0.0.1:8000/api/team_player/<id>
+  * tournaments list: http://127.0.0.1:8000/api/tournament/
+  * tournament detail: http://127.0.0.1:8000/api/tournament/<id>
